@@ -8,8 +8,8 @@ function Footer() {
       sx={{
         py: 2,
         px: 3,
-        mt: 'auto',
         backgroundColor: '#f5f5f5',
+        marginTop: 'auto',
       }}
     >
       <Typography variant="body2" align="center" color="textSecondary">
@@ -26,3 +26,5 @@ function Footer() {
 }
 
 export default Footer;
+
+

@@ -9,7 +9,13 @@ import FooterComponent from './Komponenten/FooterComponent'
 function App() {
   return (
     <Router>
-      <div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+        }}
+      >
         <HeaderComponent />
 
         <Routes>
@@ -22,5 +28,7 @@ function App() {
     </Router>
   );
 }
+
 ReactDOM.render(<App />, document.getElementById('root'));
+
 export default App;
