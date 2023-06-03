@@ -1,34 +1,26 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import ProTip from './ProTip';
-import Link from '@mui/material/Link';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function Copyright() {
+import StartSeite from './Seiten/StartSeite';
+import HeaderComponent from './Komponenten/HeaderComponent';
+import FooterComponent from './Komponenten/FooterComponent'
+
+function App() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+    <Router>
+      <div>
+        <HeaderComponent />
+
+        <Routes>
+          <Route exact path="/" component={StartSeite} />
+          {/* Weitere Routen für andere Seiten */}
+        </Routes>
+
+        <FooterComponent />
+      </div>
+    </Router>
   );
 }
-
-export default function App() {
-  return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Material UI Express.js server-rendered example
-        </Typography>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
-  );
-}
-
+ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
