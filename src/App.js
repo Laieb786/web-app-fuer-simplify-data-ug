@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import StartSeite from './Seiten/StartSeite';
 import HeaderComponent from './Komponenten/HeaderComponent';
-import FooterComponent from './Komponenten/FooterComponent'
+import FooterComponent from './Komponenten/FooterComponent';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <HeaderComponent />
 
         <Routes>
-          <Route exact path="/" component={StartSeite} />
+          <Route path="/" element={<StartSeite />} />
           {/* Weitere Routen für andere Seiten */}
         </Routes>
 

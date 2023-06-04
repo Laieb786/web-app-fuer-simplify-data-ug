@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-function App() {
+function StartSeite() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default StartSeite;
