@@ -1,14 +1,14 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Toolbar, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+
+import logo from '../Grafiken/logo.png'; // Pfad zum Logo-Bild
 
 function HeaderComponent() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Simplify-Data-UG
-        </Typography>
+        <img src={logo} alt="Logo" style={{ height: '40px', marginRight: '10px' }} />
         <Button component={Link} to="/" color="inherit">
           Home
         </Button>
@@ -22,4 +22,6 @@ function HeaderComponent() {
 }
 
 export default HeaderComponent;
+
+
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography, Link, Grid } from '@mui/material';
 
 function Footer() {
   return (
@@ -12,15 +12,21 @@ function Footer() {
         marginTop: 'auto',
       }}
     >
-      <Typography variant="body2" align="center" color="textSecondary">
-        &copy; {new Date().getFullYear()} Simplify-Data-UG. Alle Rechte vorbehalten.
-      </Typography>
-      <Typography variant="body2" align="center" color="textSecondary">
-        Powered by{' '}
-        <Link href="https://deine-website.com" color="inherit" target="_blank">
-          Deine Website
-        </Link>
-      </Typography>
+      <Grid container justifyContent="center" alignItems="center" spacing={1}>
+        <Grid item xs={12} md={6}>
+          <Typography variant="body2" align="center" color="textSecondary">
+            &copy; {new Date().getFullYear()} Simplify-Data-UG. Alle Rechte vorbehalten.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography variant="body2" align="center" color="textSecondary">
+            Powered by{' '}
+            <Link href="https://deine-website.com" color="inherit" target="_blank">
+              Deine Website
+            </Link>
+          </Typography>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
