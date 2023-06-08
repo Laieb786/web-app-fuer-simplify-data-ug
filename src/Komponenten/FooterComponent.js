@@ -4,12 +4,18 @@ import { Box, Typography, Link, Grid } from '@mui/material';
 function Footer() {
   return (
     <Box
-      component="footer"
       sx={{
-        py: 1,
-        px: 3,
-        backgroundColor: '#f5f5f5',
-        marginTop: 'auto',
+      position: 'absolute',
+      top: '1206px',
+      left: '0px',
+      width: '1448px',
+      height: '200px',
+      background: '#FFFFFFFF',
+      borderRadius: '0px',
+      borderWidth: '1px',
+      borderColor: '#BCC1CAFF',
+      borderStyle: 'solid',
+      boxShadow: '0px 0px 1px #171a1f, 0px 0px 2px #171a1f',
       }}
     >
       <Grid container justifyContent="center" alignItems="center" spacing={1}>

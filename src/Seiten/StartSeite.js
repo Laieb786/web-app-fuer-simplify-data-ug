@@ -3,12 +3,74 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import background from '../Grafiken/background.jpg'
 
 function startseite() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
-        {/* Hello World! und andere Inhalte */}
+        <Box
+          sx={{
+            position: 'relative',
+            height: '400px', // Höhe des Bildblocks anpassen
+            overflow: 'hidden',
+          }}
+        >
+          <img
+            src={background}
+            alt="Hintergrundbild"
+            style={{
+              width: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+            }}
+          />
+
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              textAlign: 'center',
+              width: '100%',
+              color: '#171A1F',
+            }}
+          >
+            <link
+              href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+              rel="stylesheet"
+            />
+            <Typography
+              variant="h5"
+              component="div"
+              sx={{
+                fontFamily: 'Poppins',
+                fontSize: '40px',
+                fontWeight: 'bold',
+              }}
+            >
+              Willkommen zum Ideen und Feedback Portal!
+            </Typography>
+          </Box>
+        </Box>
+
+        {/* Navigationen zu den einzelnen Seiten */}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginTop: '16px',
+          }}
+        >
+          <Button variant="contained" color="primary" href="/feed">
+            Feed
+          </Button>
+          <Button variant="contained" color="primary" href="/submit">
+            Idee/Feedback einreichen
+          </Button>
+          {/* Weitere Buttons für andere Seiten hinzufügen */}
+        </Box>
       </Box>
 
       <div
