@@ -8,7 +8,7 @@ function Footer() {
       position: 'absolute',
       top: '1206px',
       left: '0px',
-      width: '1448px',
+      width: '100%',
       height: '200px',
       background: '#FFFFFFFF',
       borderRadius: '0px',
@@ -19,7 +19,7 @@ function Footer() {
       }}
     >
       <Grid container justifyContent="center" alignItems="center" spacing={1}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={10} md={6}>
           <Typography variant="body2" align="center" color="textSecondary">
             &copy; {new Date().getFullYear()} Simplify-Data-UG. Alle Rechte vorbehalten.
           </Typography>
