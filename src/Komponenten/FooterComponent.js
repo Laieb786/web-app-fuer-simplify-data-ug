@@ -1,42 +1,127 @@
 import React from 'react';
-import { Box, Typography, Link, Grid } from '@mui/material';
+import { Box, Typography, Link, Grid, IconButton } from '@mui/material';
+import { LinkedIn, Twitter, Instagram, KeyboardArrowUp, Description, Mail, Phone, Telegram } from '@mui/icons-material';
+import { useState } from 'react';
+import whitelogo from '../Grafiken/white-logo.png'; 
 
 function Footer() {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  const [hoveredIcon, setHoveredIcon] = useState('');
   return (
     <Box
       sx={{
-      position: 'absolute',
-      top: '1206px',
-      left: '0px',
-      width: '100%',
-      height: '200px',
-      background: '#FFFFFFFF',
-      borderRadius: '0px',
-      borderWidth: '1px',
-      borderColor: '#BCC1CAFF',
-      borderStyle: 'solid',
-      boxShadow: '0px 0px 1px #171a1f, 0px 0px 2px #171a1f',
+        position: 'relative',
+        backgroundColor: '#FFFFFF',
+        boxShadow: '0px 0px 0px, 0px 0px 0.5px',
+        pt: 1,
+        pb: 1,
       }}
     >
-      <Grid container justifyContent="center" alignItems="center" spacing={1}>
-        <Grid item xs={10} md={6}>
-          <Typography variant="body2" align="center" color="textSecondary">
-            &copy; {new Date().getFullYear()} Simplify-Data-UG. Alle Rechte vorbehalten.
+      <Box textAlign="center">
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <img src={whitelogo} alt="Logo" style={{ maxWidth: '80%' }} sx={{ mt: 3 }} />
+          <Typography
+            variant="body2"
+            align="center"
+            color="textSecondary"
+            sx={{ fontFamily: 'Poppins', mt: 1 }}
+          >
+            Ihr starker IT-Partner mit innovativen und modernen Lösungen für jede Situation!
           </Typography>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Typography variant="body2" align="center" color="textSecondary">
-            Powered by{' '}
-            <Link href="https://deine-website.com" color="inherit" target="_blank">
-              Deine Website
-            </Link>
+        </Box>
+        <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
+          <IconButton
+            color='primary'
+            href="https://www.linkedin.com/company/simplify-data-ug/"
+            target="_blank"
+            onMouseEnter={() => setHoveredIcon('linkedin')}
+            onMouseLeave={() => setHoveredIcon('')}
+          >
+            <LinkedIn sx={{ fontSize: hoveredIcon === 'linkedin' ? '30px' : '24px' }} />
+          </IconButton>
+
+          <IconButton
+            color="primary"
+            href="https://twitter.com/simplify_data"
+            target="_blank"
+            onMouseEnter={() => setHoveredIcon('twitter')}
+            onMouseLeave={() => setHoveredIcon('')}
+          >
+            <Twitter sx={{ fontSize: hoveredIcon === 'twitter' ? '30px' : '24px' }} />
+          </IconButton>
+
+          <IconButton
+            color="#45a322"
+            href="https://www.instagram.com/simplify.data/"
+            target="_blank"
+            onMouseEnter={() => setHoveredIcon('instagram')}
+            onMouseLeave={() => setHoveredIcon('')}
+          >
+            <Instagram sx={{ fontSize: hoveredIcon === 'instagram' ? '30px' : '24px' }} />
+          </IconButton>
+
+          <IconButton
+            color="#45a322"
+            href="https://t.me/SimplifyData_bot"
+            target="_blank"
+            onMouseEnter={() => setHoveredIcon('telegram')}
+            onMouseLeave={() => setHoveredIcon('')}
+          >
+            <Telegram sx={{ fontSize: hoveredIcon === 'telegram' ? '30px' : '24px' }} />
+          </IconButton>
+        </Box>
+        <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
+          <Typography variant="body2" color="textSecondary" fontFamily='Poppins' fontWeight="bold">
+            Kontakt
           </Typography>
-        </Grid>
-      </Grid>
+          <Box display="flex" alignItems="center">
+            <Phone color="primary" />
+            <Typography variant="body2" align="left" color="textSecondary" sx={{fontFamily: 'Poppins', ml: 1 }}>
+              0431 705 770 24
+            </Typography>
+          </Box>
+          <Box display="flex" alignItems="center">
+            <Mail color="primary" />
+            <Typography variant="body2" align="left" color="textSecondary" sx={{fontFamily: 'Poppins', ml: 1 }}>
+              <Link href="mailto:info@simplify-data.de">info@simplify-data.de</Link>
+            </Typography>
+          </Box>
+          <Typography variant="body2" align="center" color="textSecondary" fontFamily= 'Poppins'>
+            Simplify Data UG (haftungsbeschränkt)<br />
+            Ostring 183, 24143 Kiel
+          </Typography>
+        </Box>
+        <IconButton color="primary" onClick={handleScrollToTop} sx={{ mt: 1}}>
+          <KeyboardArrowUp />
+        </IconButton>
+        <Typography variant="body2" color="textSecondary">
+          &copy; {new Date().getFullYear()} Simplify-Data-UG. Alle Rechte vorbehalten.
+        </Typography>
+        <Box display="flex" justifyContent="center">
+          <Link href="/impressum" variant="body2" color="textSecondary" sx={{ mr: 1 }}>
+            Impressum
+          </Link>
+          <Link href="/datenschutz" variant="body2" color="textSecondary">
+            Datenschutz
+          </Link>
+        </Box>
+      </Box>
     </Box>
-  );
+  );  
 }
 
 export default Footer;
+
+
+
+
+
+
+
+
+
+
 
 

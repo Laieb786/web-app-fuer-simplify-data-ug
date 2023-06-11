@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Button, ButtonGroup, Grid, Menu, MenuItem, useMediaQuery, Box } from '@mui/material';
+import { AppBar, Toolbar, Button, Grid, Menu, MenuItem, useMediaQuery} from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import DynamicFeedOutlinedIcon from '@mui/icons-material/DynamicFeedOutlined';
@@ -117,7 +117,7 @@ function HeaderComponent() {
                         fontWeight: 'bold',
                         textTransform: 'capitalize',
                         '&:hover': {
-                          background: '#45A423FF',
+                          background: '#45a322',
                           color: 'white',
                         },
                       }}
@@ -142,7 +142,7 @@ function HeaderComponent() {
                         fontWeight: 'bold',
                         textTransform: 'capitalize',
                         '&:hover': {
-                          background: '#45A423FF',
+                          background: '#45a322',
                           color: 'white',
                         },
                       }}
@@ -167,7 +167,7 @@ function HeaderComponent() {
                         fontWeight: 'bold',
                         textTransform: 'capitalize',
                         '&:hover': {
-                          background: '#45A423FF',
+                          background: '#45a322',
                           color: 'white',
                         },
                       }}
