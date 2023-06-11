@@ -9,6 +9,18 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
   const [hoveredIcon, setHoveredIcon] = useState('');
+
+  const iconColors = {
+    linkedin: '#0A66C2',
+    twitter: '#1DA1F2',
+    instagram: '#E4405F',
+    telegram: '#0088CC',
+  };
+
+  const getIconColor = (iconName) => {
+    return hoveredIcon === iconName ? '30px' : '24px';
+  };
+
   return (
     <Box
       sx={{
@@ -39,7 +51,7 @@ function Footer() {
             onMouseEnter={() => setHoveredIcon('linkedin')}
             onMouseLeave={() => setHoveredIcon('')}
           >
-            <LinkedIn sx={{ fontSize: hoveredIcon === 'linkedin' ? '30px' : '24px' }} />
+            <LinkedIn sx={{ fontSize: getIconColor('linkedin'), color: iconColors.linkedin }} />
           </IconButton>
 
           <IconButton
@@ -49,7 +61,7 @@ function Footer() {
             onMouseEnter={() => setHoveredIcon('twitter')}
             onMouseLeave={() => setHoveredIcon('')}
           >
-            <Twitter sx={{ fontSize: hoveredIcon === 'twitter' ? '30px' : '24px' }} />
+            <Twitter sx={{ fontSize: getIconColor('twitter'), color: iconColors.twitter }} />
           </IconButton>
 
           <IconButton
@@ -59,7 +71,7 @@ function Footer() {
             onMouseEnter={() => setHoveredIcon('instagram')}
             onMouseLeave={() => setHoveredIcon('')}
           >
-            <Instagram sx={{ fontSize: hoveredIcon === 'instagram' ? '30px' : '24px' }} />
+            <Instagram sx={{ fontSize: getIconColor('instagram'), color: iconColors.instagram }} />
           </IconButton>
 
           <IconButton
@@ -69,7 +81,7 @@ function Footer() {
             onMouseEnter={() => setHoveredIcon('telegram')}
             onMouseLeave={() => setHoveredIcon('')}
           >
-            <Telegram sx={{ fontSize: hoveredIcon === 'telegram' ? '30px' : '24px' }} />
+            <Telegram sx={{ fontSize: getIconColor('telegram'), color: iconColors.telegram }} />
           </IconButton>
         </Box>
         <Box display="flex" flexDirection="column" alignItems="center" mt={2}>
