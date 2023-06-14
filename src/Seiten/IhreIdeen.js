@@ -3,19 +3,28 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import hintergrund from '../Grafiken/hintergrund-2.png'
 
 function ideen_feedback_übersicht() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        {/* Hello World! und andere Inhalte */}
-      </Box>
-
+    <Container 
+    maxWidth="100%"
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      alignItems: 'center', 
+      minHeight: '100vh', 
+      backgroundImage: `url(${hintergrund})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+    >
       <div
         className="rectangle"
         style={{
           position: 'absolute',
-          top: '64px', // Adjust this value based on your header height
+          top: '64px', 
           left: '0px',
           width: '100%',
           height: '120px',

@@ -3,9 +3,43 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import hintergrund from '../Grafiken/hintergrund.jpg';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import { StepConnector } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
+import hintergrund from '../Grafiken/hintergrund-2.png';
+import thumbsup from '../Grafiken/thumb-up-dynamic-color.png';
+import chat from '../Grafiken/chat-text-dynamic-color.png';
+import pencil from '../Grafiken/pencil-dynamic-color.png';
 
-function startseite() {
+const CustomStepper = styled(Stepper)({
+  '& .MuiStepConnector-line': {
+    borderLeftWidth: '2px',
+    borderLeftStyle: 'solid',
+    borderColor: '#000000',
+  },
+  '& .MuiStepConnector-root': {
+    marginLeft: 'calc(50% - 20px)', // Zentrierung des Steppers
+  },
+  margin: '0 auto', // Zentrierung des Steppers
+});
+
+const StyledStep = styled(Step)({
+  width: '100px',
+});
+
+const StyledLine = styled('div')({
+  height: '50px',
+  borderLeft: '2px solid #000000',
+  marginLeft: 'calc(50% - 1px)', // Zentrierung der Linien
+});
+
+function Startseite() {
+  const steps = ['Schritt 1', 'Schritt 2', 'Schritt 3'];
+  const activeStep = 0;
+
   return (
     <Box
       sx={{
@@ -55,8 +89,8 @@ function startseite() {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          textAlign: 'center',
           color: '#171A1F',
+          px: 4,
         }}
       >
         <link
@@ -70,30 +104,127 @@ function startseite() {
             fontFamily: 'Poppins',
             fontSize: '40px',
             fontWeight: 'bold',
+            textAlign: 'center',
+            mb: 2,
           }}
         >
           Willkommen zum Ideen und Feedback Portal!
         </Typography>
 
-        {/* Navigationen zu den einzelnen Seiten */}
-        <Box
+        <Typography
+          variant="body1"
+          component="div"
           sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            marginTop: '16px',
+            fontFamily: 'Poppins',
+            fontSize: '20px',
+            mb: 2,
+            textAlign: 'center',
           }}
         >
-          <Button variant="contained" color="primary" href="/feed">
-            Feed
-          </Button>
-          <Button variant="contained" color="primary" href="/submit">
-            Idee/Feedback einreichen
-          </Button>
-          {/* Weitere Buttons für andere Seiten hinzufügen */}
+          Teilen Sie Ihre Ideen und geben Sie uns wertvolles Feedback, um unsere Produkte und Dienstleistungen zu verbessern. Wir schätzen Ihre Beiträge und freuen uns auf Ihre Mitwirkung. Gemeinsam können wir Großes erreichen!
+        </Typography>
+
+        <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', my: 10 }}>
+          <CustomStepper alternativeLabel activeStep={activeStep} connector={<StepConnector />}>
+  {steps.map((label, index) => (
+    <StyledStep key={label}>
+      <StepLabel>
+        <Tooltip title={label}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'all 0.3s',
+              cursor: 'pointer',
+              '&:hover': {
+                transform: 'scale(1.1)',
+              },
+            }}
+          >
+            {index !== 0 && <StyledLine />}
+            {index === 0 && (
+              <img
+                src={chat}
+                alt="Step 1"
+                width="100px"
+                height="100px"
+                style={{ borderRadius: '50%' }}
+              />
+            )}
+            {index === 1 && (
+              <img
+                src={pencil}
+                alt="Step 2"
+                width="100px"
+                height="100px"
+                style={{ borderRadius: '50%' }}
+              />
+            )}
+            {index === 2 && (
+              <img
+                src={thumbsup}
+                alt="Step 3"
+                width="100px"
+                height="100px"
+                style={{ borderRadius: '50%' }}
+              />
+            )}
+          </Box>
+        </Tooltip>
+      </StepLabel>
+    </StyledStep>
+  ))}
+</CustomStepper>
+        </Box>
+
+        <Box sx={{ textAlign: 'center' }}>
+          <Typography
+            variant="body1"
+            component="div"
+            sx={{
+              fontFamily: 'Poppins',
+              fontSize: '20px',
+              mb: 2,
+            }}
+          >
+            Klicken Sie auf die Icons, um mehr über jeden Schritt zu erfahren.
+          </Typography>
         </Box>
       </Box>
     </Box>
   );
 }
 
-export default startseite;
+export default Startseite;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

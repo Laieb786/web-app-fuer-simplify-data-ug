@@ -3,14 +3,24 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import hintergrund from '../Grafiken/hintergrund-2.png'
+import Suchfunktion from '../Komponenten/Suchfunktion'
 
-function feed() {
+function Feed() {
   return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        {/* Hello World! und andere Inhalte */}
-      </Box>
-
+    <Container
+      maxWidth="100%"
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center', // Zentriert den Inhalt horizontal
+        minHeight: '100vh', // Mindesthöhe auf volle Bildschirmhöhe setzen
+        backgroundImage: `url(${hintergrund})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div
         className="rectangle"
         style={{
@@ -19,10 +29,9 @@ function feed() {
           left: '0px',
           width: '100%',
           height: '120px',
-          background:`repeating-linear-gradient( 45deg,#0000 calc(-650%/13) calc(50%/13),rgba(0, 0, 0, 0.15) 0 calc(100%/13),#0000 0 calc(150%/13),rgba(0, 0, 0, 0.15) 0 calc(200%/13),#0000 0 calc(250%/13),rgba(0, 0, 0, 0.15) 0 calc(300%/13)),repeating-linear-gradient( 45deg,#0000 calc(-650%/13) calc(50%/13),rgba(0, 0, 0, 0.15) 0 calc(100%/13),#0000 0 calc(150%/13),rgba(0, 0, 0, 0.15) 0 calc(200%/13),#0000 0 calc(250%/13),rgba(0, 0, 0, 0.15) 0 calc(300%/13)) 20px 20px,repeating-linear-gradient(-45deg,#0000 calc(-650%/13) calc(50%/13),rgba(0, 0, 0, 0.15) 0 calc(100%/13),#0000 0 calc(150%/13),rgba(0, 0, 0, 0.15) 0 calc(200%/13),#0000 0 calc(250%/13),rgba(0, 0, 0, 0.15) 0 calc(300%/13)),repeating-linear-gradient(-45deg,#0000 calc(-650%/13) calc(50%/13),rgba(0, 0, 0, 0.15) 0 calc(100%/13),#0000 0 calc(150%/13),rgba(0, 0, 0, 0.15) 0 calc(200%/13),#0000 0 calc(250%/13),rgba(0, 0, 0, 0.15) 0 calc(300%/13)) 20px 20px #45A423FF`,
+          background: `repeating-linear-gradient(45deg, #0000 calc(-650% / 13) calc(50% / 13), rgba(0, 0, 0, 0.15) 0 calc(100% / 13), #0000 0 calc(150% / 13), rgba(0, 0, 0, 0.15) 0 calc(200% / 13), #0000 0 calc(250% / 13), rgba(0, 0, 0, 0.15) 0 calc(300% / 13)), repeating-linear-gradient(45deg, #0000 calc(-650% / 13) calc(50% / 13), rgba(0, 0, 0, 0.15) 0 calc(100% / 13), #0000 0 calc(150% / 13), rgba(0, 0, 0, 0.15) 0 calc(200% / 13), #0000 0 calc(250% / 13), rgba(0, 0, 0, 0.15) 0 calc(300% / 13)) 20px 20px, repeating-linear-gradient(-45deg, #0000 calc(-650% / 13) calc(50% / 13), rgba(0, 0, 0, 0.15) 0 calc(100% / 13), #0000 0 calc(150% / 13), rgba(0, 0, 0, 0.15) 0 calc(200% / 13), #0000 0 calc(250% / 13), rgba(0, 0, 0, 0.15) 0 calc(300% / 13)), repeating-linear-gradient(-45deg, #0000 calc(-650% / 13) calc(50% / 13), rgba(0, 0, 0, 0.15) 0 calc(100% / 13), #0000 0 calc(150% / 13), rgba(0, 0, 0, 0.15) 0 calc(200% / 13), #0000 0 calc(250% / 13), rgba(0, 0, 0, 0.15) 0 calc(300% / 13)) 20px 20px #45A423FF`,
           backgroundSize: '40px 40px',
-          borderRadius: '1px', //Hier kann man die Eckenformen ändern
-          boxShadow: '0px 0px 1px #171a1f, 0px 0px 2px #171a1f',
+          borderRadius: '0px', // Hier kann man die Eckenformen ändern
         }}
       >
         <link
@@ -44,8 +53,15 @@ function feed() {
           Feed
         </Typography>
       </div>
+      <Box sx={{ my: 50 }}>
+        <Suchfunktion />
+      </Box>
     </Container>
   );
 }
 
-export default feed;
+export default Feed;
+
+
+
+

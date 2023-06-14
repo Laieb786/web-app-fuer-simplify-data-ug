@@ -25,6 +25,7 @@ function Footer() {
     <Box
       sx={{
         position: 'relative',
+        top: '0px',
         backgroundColor: '#FFFFFF',
         boxShadow: '0px 0px 0px, 0px 0px 0.5px',
         pt: 1,
