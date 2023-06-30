@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Box,
+} from '@mui/material';
+
+const App = () => {
+  const [newFeedback, setNewFeedback] = useState('');
+  const [newRating, setNewRating] = useState(0);
+
+  const handleAddFeedback = () => {
+    const newFeedbackItem = {
+      id: feedbacks.length + 1,
+      customer: 'Neuer Kunde',
+      content: newFeedback,
+      rating: newRating,
+    };
+    feedbacks.push(newFeedbackItem);
+    setNewFeedback('');
+    setNewRating(0);
+  };
+
+  return (
+    <Container maxWidth="sm">
+      <Box sx={{ marginTop: '2rem' }}>
+        <Typography variant="h6" sx={{ color: '#4caf50', fontFamily: 'Arial, sans-serif', fontWeight: 'bold' }}>
+          Neue Idee/Feedback einreichen:
+        </Typography>
+        <TextField
+          label="Idee/Feedback"
+          variant="outlined"
+          size="small"
+          value={newFeedback}
+          onChange={(e) => setNewFeedback(e.target.value)}
+          fullWidth
+          sx={{ marginTop: '1rem' }}
+        />
+        <Rating
+          name="newRating"
+          value={newRating}
+          onChange={(e) => setNewRating(Number(e.target.value))}
+          sx={{ marginTop: '1rem' }}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleAddFeedback}
+          disabled={!newFeedback}
+          sx={{ marginTop: '1rem' }}
+        >
+          Einreichen
+        </Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default App;
+
