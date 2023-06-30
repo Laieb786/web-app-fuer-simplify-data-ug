@@ -1,0 +1,127 @@
+import React, { useState } from 'react';
+import {
+  Container,
+  Typography,
+  TextField,
+  Button,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemSecondaryAction,
+  IconButton,
+} from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+
+const App = () => {
+  const [feedbacks, setFeedbacks] = useState([
+    {
+      id: 1,
+      content: 'Ein tolles Produkt! Sehr zufrieden.',
+      rating: 4,
+    },
+    {
+      id: 2,
+      content: 'Der Kundenservice war in Ordnung.',
+      rating: 3,
+    },
+    {
+      id: 3,
+      content: 'Das Produkt hat meine Erwartungen übertroffen.',
+      rating: 5,
+    },
+  ]);
+  const [editMode, setEditMode] = useState(false);
+  const [editedFeedbackId, setEditedFeedbackId] = useState(null);
+  const [editedFeedbackContent, setEditedFeedbackContent] = useState('');
+  const [editedFeedbackRating, setEditedFeedbackRating] = useState(0);
+
+  const handleEditFeedback = (feedbackId) => {
+    const feedbackToEdit = feedbacks.find((feedback) => feedback.id === feedbackId);
+    setEditedFeedbackId(feedbackId);
+    setEditedFeedbackContent(feedbackToEdit.content);
+    setEditedFeedbackRating(feedbackToEdit.rating);
+    setEditMode(true);
+  };
+
+  const handleSaveFeedback = () => {
+    const updatedFeedbacks = feedbacks.map((feedback) => {
+      if (feedback.id === editedFeedbackId) {
+        return {
+          ...feedback,
+          content: editedFeedbackContent,
+          rating: editedFeedbackRating,
+        };
+      }
+      return feedback;
+    });
+    setFeedbacks(updatedFeedbacks);
+    setEditMode(false);
+    setEditedFeedbackId(null);
+    setEditedFeedbackContent('');
+    setEditedFeedbackRating(0);
+  };
+
+  const handleCancelEdit = () => {
+    setEditMode(false);
+    setEditedFeedbackId(null);
+    setEditedFeedbackContent('');
+    setEditedFeedbackRating(0);
+  };
+
+  return (
+    <Container maxWidth="sm">
+      <Box sx={{ marginTop: '2rem' }}>
+        <Typography variant="h6" sx={{ color: '#4caf50', fontFamily: 'Arial, sans-serif', fontWeight: 'bold' }}>
+          Ideen/Feedback verwalten:
+        </Typography>
+        {editMode ? (
+          <>
+            <TextField
+              label="Idee/Feedback"
+              variant="outlined"
+              size="small"
+              value={editedFeedbackContent}
+              onChange={(e) => setEditedFeedbackContent(e.target.value)}
+              fullWidth
+              sx={{ marginTop: '1rem' }}
+            />
+            <Rating
+              name="editedFeedbackRating"
+              value={editedFeedbackRating}
+              onChange={(e) => setEditedFeedbackRating(Number(e.target.value))}
+              sx={{ marginTop: '1rem' }}
+            />
+            <Button variant="contained" color="primary" onClick={handleSaveFeedback} sx={{ marginTop: '1rem' }}>
+              Speichern
+            </Button>
+            <Button variant="outlined" onClick={handleCancelEdit} sx={{ marginTop: '1rem', marginLeft: '1rem' }}>
+              Abbrechen
+            </Button>
+          </>
+        ) : (
+          <>
+            {feedbacks.length > 0 ? (
+              <List>
+                {feedbacks.map((feedback) => (
+                  <ListItem key={feedback.id}>
+                    <ListItemText primary={feedback.content} secondary={`Bewertung: ${feedback.rating}`} />
+                    <ListItemSecondaryAction>
+                      <IconButton edge="end" aria-label="edit" onClick={() => handleEditFeedback(feedback.id)}>
+                        <EditIcon />
+                      </IconButton>
+                    </ListItemSecondaryAction>
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <Typography variant="body2">Keine Ideen/Feedbacks vorhanden.</Typography>
+            )}
+          </>
+        )}
+      </Box>
+    </Container>
+  );
+};
+
+export default App;
