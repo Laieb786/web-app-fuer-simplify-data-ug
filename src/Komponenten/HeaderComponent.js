@@ -7,7 +7,7 @@ import DrawOutlinedIcon from '@mui/icons-material/DrawOutlined';
 import DvrOutlinedIcon from '@mui/icons-material/DvrOutlined';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import logo from '../Grafiken/logo.png'; // Pfad zum Logo-Bild
+import logo from '../Grafiken/logo.png'; 
 
 function HeaderComponent() {
   const [anchorEl, setAnchorEl] = useState(null);
