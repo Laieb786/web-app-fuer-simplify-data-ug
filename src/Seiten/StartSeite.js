@@ -16,47 +16,47 @@ const CustomStepper = styled(Box)({
   justifyContent: 'space-around',
   alignItems: 'center',
   width: '100%',
-  marginTop: '80px', /* Increased distance from the top */
+  marginTop: '80px', 
 });
 
 const StyledIcon = styled(Box)(({ theme }) => ({
   width: '100px',
   height: '100px',
   borderRadius: '50%',
-  background: '#FFFFFF', // Weißer Hintergrund für das Icon
+  background: '#FFFFFF', 
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   transition: 'all 0.3s',
   cursor: 'pointer',
-  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)', // Box-Schatten-Effekt
+  boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)',
   '&:hover': {
     transform: 'scale(1.1)',
-    boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.8)', // Erhöhter Box-Schatten-Effekt beim Hovern
+    boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.8)', 
   },
   [theme.breakpoints.down('sm')]: {
-    width: '80px', // Verringerte Größe der Icons auf kleineren Bildschirmen
-    height: '80px', // Verringerte Größe der Icons auf kleineren Bildschirmen
+    width: '80px', 
+    height: '80px', 
   },
 }));
 
 const Arrow = styled(Box)({
-  width: '80px', // Increased width of the arrow
-  height: '4px', // Increased thickness of the arrow
+  width: '80px', 
+  height: '4px', 
   background: '#45A423FF',
 });
 
 const CustomButton = styled(Button)({
-  borderRadius: '20px', /* Rounded corners */
-  background: 'transparent', /* Clear background */
-  color: '#45A423FF', /* Green text color */
-  border: '2px solid #45A423FF', /* Border with green color */
-  padding: '10px 20px', /* Added padding */
-  fontWeight: 'bold', /* Bold text */
+  borderRadius: '20px', 
+  background: 'transparent',
+  color: '#45A423FF', 
+  border: '2px solid #45A423FF', 
+  padding: '10px 20px', 
+  fontWeight: 'bold',
   transition: 'all 0.3s',
   '&:hover': {
     background: '#45A423FF',
-    color: '#FFFFFF', /* White text color on hover */
+    color: '#FFFFFF', 
   },
 });
 

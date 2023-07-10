@@ -45,7 +45,7 @@ const softwareAuswahlen = [
   // Weitere Software-Auswahlen hier hinzufügen
 ];
 
-const itemsPerPage = 3; // Anzahl der Software-Auswahlen pro Seite
+const itemsPerPage = 3;
 
 function AuswahlSeite({ handleSelection }) {
   const [page, setPage] = useState(1);
@@ -84,7 +84,7 @@ function AuswahlSeite({ handleSelection }) {
           flexWrap: 'wrap',
           justifyContent: 'center',
           alignItems: 'center',
-          marginBottom: '20px', // Hier den gewünschten Abstand zum Pagination-Element angeben
+          marginBottom: '20px', 
         }}
       >
         {selectedSoftwareAuswahlen.map((auswahl) => (
@@ -124,10 +124,10 @@ function AuswahlSeite({ handleSelection }) {
         ))}
       </Box>
       <Pagination
-        count={Math.ceil(softwareAuswahlen.length / itemsPerPage)} // Berechnen der Anzahl der Seiten basierend auf der Anzahl der Software-Auswahlen
+        count={Math.ceil(softwareAuswahlen.length / itemsPerPage)} 
         page={page}
         onChange={handlePageChange}
-        sx={{ marginBottom: '20px' }} // Hier den gewünschten Abstand zum Rectangle-Element angeben
+        sx={{ marginBottom: '20px' }} 
       />
     </Box>
   );
@@ -174,8 +174,8 @@ function Feed() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          minHeight: 'calc(100vh - 244px)', // Adjust the value based on the height of the rectangle and the header
-          marginTop: '100px', // Add margin from the top to create spacing
+          minHeight: 'calc(100vh - 244px)', 
+          marginTop: '100px', 
         }}
       >
         <Feedfunktion selectedFeed={selectedFeed} />

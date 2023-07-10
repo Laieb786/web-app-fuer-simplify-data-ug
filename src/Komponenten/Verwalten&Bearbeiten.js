@@ -34,7 +34,6 @@ const IdeaList = ({ ideas, onEdit, onDelete }) => {
   };
 
   const handleEditIdea = () => {
-    // Pass the edited idea to the onEdit callback
     onEdit({ ...editedIdea });
     handleEditDialogClose();
   };

@@ -365,8 +365,6 @@ const CommentTabs = () => {
   };
 
   const renderSearch = () => {
-    // Render the search functionality with comment search and category filter
-    // You can replace this with your own implementation
     return (
       <div>
         <TextField
