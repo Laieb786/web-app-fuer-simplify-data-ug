@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Typography,
   TextField,
@@ -11,9 +11,9 @@ import {
   Input,
   Paper,
   Grid,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import SendIcon from '@mui/icons-material/Send';
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import SendIcon from "@mui/icons-material/Send";
 
 const IdeaFeedback = ({ onIdeaSubmit }) => {
   const [idea, setIdea] = useState([]);
@@ -46,7 +46,7 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
       category,
       software,
       files,
-    };    
+    };
     onIdeaSubmit(newIdea);
     setIdea([]);
     setCategory([]);
@@ -55,14 +55,14 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
   };
 
   const CustomButton = styled(Button)({
-    borderRadius: '20px',
-    background: '#45A423FF',
-    color: '#FFFFFF',
-    padding: '10px 20px',
-    fontWeight: 'bold',
-    transition: 'all 0.3s',
-    '&:hover': {
-      background: '#2F7E2EFF',
+    borderRadius: "20px",
+    background: "#45A423FF",
+    color: "#FFFFFF",
+    padding: "10px 20px",
+    fontWeight: "bold",
+    transition: "all 0.3s",
+    "&:hover": {
+      background: "#2F7E2EFF",
     },
   });
 
@@ -70,20 +70,20 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
     <Paper
       elevation={3}
       sx={{
-        padding: '30px',
-        marginTop: '15px',
-        backgroundColor: '#FFFFFF',
-        borderRadius: '8px',
+        padding: "30px",
+        marginTop: "15px",
+        backgroundColor: "#FFFFFF",
+        borderRadius: "8px",
       }}
     >
       <Typography
         variant="h4"
         sx={{
-          color: '#45A423FF',
-          fontFamily: 'Poppins, sans-serif',
-          fontWeight: 'bold',
-          textTransform: 'uppercase',
-          marginBottom: '16px',
+          color: "#45A423FF",
+          fontFamily: "Poppins, sans-serif",
+          fontWeight: "bold",
+          textTransform: "uppercase",
+          marginBottom: "16px",
         }}
       >
         Ihre Meinung ist gefragt!
@@ -101,13 +101,13 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
               fullWidth
               required
               InputProps={{
-                style: { fontFamily: 'Poppins, sans-serif' },
+                style: { fontFamily: "Poppins, sans-serif" },
               }}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth required>
-              <InputLabel id="category-label" sx={{ fontFamily: 'Poppins' }}>
+              <InputLabel id="category-label" sx={{ fontFamily: "Poppins" }}>
                 Kategorie
               </InputLabel>
               <Select
@@ -116,7 +116,7 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
                 value={category}
                 onChange={handleCategoryChange}
                 label="Kategorie"
-                style={{ fontFamily: 'Poppins' }}
+                style={{ fontFamily: "Poppins" }}
               >
                 <MenuItem value="Kategorie 1">Kategorie 1</MenuItem>
                 <MenuItem value="Kategorie 2">Kategorie 2</MenuItem>
@@ -126,7 +126,7 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth required>
-              <InputLabel id="software-label" sx={{ fontFamily: 'Poppins' }}>
+              <InputLabel id="software-label" sx={{ fontFamily: "Poppins" }}>
                 Software
               </InputLabel>
               <Select
@@ -135,7 +135,7 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
                 value={software}
                 onChange={handleSoftwareChange}
                 label="Software"
-                style={{ fontFamily: 'Poppins' }}
+                style={{ fontFamily: "Poppins" }}
               >
                 <MenuItem value="Software 1">Software 1</MenuItem>
                 <MenuItem value="Software 2">Software 2</MenuItem>
@@ -169,23 +169,3 @@ const IdeaFeedback = ({ onIdeaSubmit }) => {
 };
 
 export default IdeaFeedback;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
